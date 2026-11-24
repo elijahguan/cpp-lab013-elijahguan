@@ -122,14 +122,16 @@ TEST_CASE("sorting handles reverse sorted input") {
 }
 
 TEST_CASE("sorting handles alternating high and low values") {
-    std::vector<int> values = {5, -5, 5, -5, 5, -5, 5, -5, 5};
+    std::vector<int> values = {5, -5, 5, -5, 5, -5, 5, -5, 5}; //4 -5s, 5 5s
     auto mergeResult = SortingAlgorithms::mergeSort(values);
     auto quickResult = SortingAlgorithms::quickSort(values);
 
     REQUIRE(SortingAlgorithms::isSorted(mergeResult));
     REQUIRE(SortingAlgorithms::isSorted(quickResult));
-    REQUIRE(mergeResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5}));
-    REQUIRE(quickResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5}));
+    REQUIRE(mergeResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5})); //5 -5s, 4 5s
+    REQUIRE(quickResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5})); //5 -5s, 4 5s WRONG
+    REQUIRE(mergeResult == std::vector<int>({-5, -5, -5, -5, 5, 5, 5, 5, 5})); //4 -5s, 5 5s
+    REQUIRE(quickResult == std::vector<int>({-5, -5, -5, -5, 5, 5, 5, 5, 5})); //4 -5s, 5 5s
 }
 
 TEST_CASE("sorting preserves duplicate counts exactly") {
