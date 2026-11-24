@@ -128,8 +128,8 @@ TEST_CASE("sorting handles alternating high and low values") {
 
     REQUIRE(SortingAlgorithms::isSorted(mergeResult));
     REQUIRE(SortingAlgorithms::isSorted(quickResult));
-    REQUIRE(mergeResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5})); //5 -5s, 4 5s
-    REQUIRE(quickResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5})); //5 -5s, 4 5s WRONG
+    // REQUIRE(mergeResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5})); //5 -5s, 4 5s
+    // REQUIRE(quickResult == std::vector<int>({-5, -5, -5, -5, -5, 5, 5, 5, 5})); //5 -5s, 4 5s WRONG
     REQUIRE(mergeResult == std::vector<int>({-5, -5, -5, -5, 5, 5, 5, 5, 5})); //4 -5s, 5 5s
     REQUIRE(quickResult == std::vector<int>({-5, -5, -5, -5, 5, 5, 5, 5, 5})); //4 -5s, 5 5s
 }
