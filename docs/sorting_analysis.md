@@ -36,14 +36,14 @@ Merge sort is better when there are a lot of duplicates of a number and when the
 Students should discuss:
 
 - recursive structure and recursion depth;
-Merge Sort:
-Quick Sort:
+Merge Sort: Merge sort divides the vector recursively into two halves until each subvector only contains one element. Then, it will merge the vectors in sorted order. Its recursion depth is O(n log n).
+Quick Sort: Quick sort chooses a pivot and partitions smaller elements on left and bigger elements on right, sorting them recursively. Its recursion depth is O(log n) in the expected and best case, but if the partition is bad (ie always largest or smallest element) it can be O(n).
 - whether the algorithm is in-place or requires auxiliary storage;
-Merge Sort:
-Quick Sort:
+Merge Sort: Merge sort requires auxiliary storage to store the values in sorted order. It takes O(n) space where n is the number of elements.
+Quick Sort: Quick sort uses an in-place implementation by partitioning the vector and moving the values around the pivot. 
 - worst-case behavior on already sorted or reverse-sorted inputs;
-Merge Sort:
-Quick Sort:
+Merge Sort: In the best, expected, and worst case, merge sort will always take O(n log n) time, so there is no difference between the inputs.
+Quick Sort: If quick sort always chooses the first or last element as its pivot, it will create unbalanced partitions that can lead to O(n^2) time. If pivots are chosen correctly, the chances of this occuring will decrease.
 - the role of partitioning in quick sort; Quick sort requires partitioning to split the unsorted vector into two smaller vectors, where the values smaller than the pivot are on the left and values greater than the pivot are on the right. Then, once the pivot is in its proper order, the recursion chooses pivots for the two subvectors.
 - how merge sort handles duplicates and large input sizes efficiently.
 
